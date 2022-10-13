@@ -1,6 +1,4 @@
-from datetime import date
-import random
-import json
+from datetime import datetime
 from Funcionario import Funcionario
 
 with open("nomes.txt","r",encoding="utf-8") as nomes:
@@ -13,28 +11,13 @@ with open("sobrenomes.txt","r",encoding="utf-8") as sobrenomes:
 
 with open("datas.txt","r",encoding="utf-8") as datas:
     listadatas = datas.readlines()
-    listadatas = [x.replace(" ","") for x in listadatas]
-
-print(listadatas)
+    listadatas = [x.replace("\n","") for x in listadatas]
 
 
 
-listafunc : list = []
-datas = []
+listaDefuncinarios : list = []
 for i in range(53):
-    ano = random.randint(1990,2000)
-    mes = random.randint(1,12)
-    dia = random.randint(1,20)
-    funcio = Funcionario(i,listaNomes[i],listaSobrenomes[i],date(ano,mes,dia))
-    listafunc.append(funcio)
-      
-for i in range(53):
-    ano = random.randint(1990,2000)
-    mes = random.randint(1,12)
-    dia = random.randint(1,20)
-    
-    datas.append(date(ano,mes,dia).strftime("%d/%m/%Y"))
+    dta = datetime.strptime(listadatas[i],'%m/%d/%Y').date()
+    funcio = Funcionario(i,listaNomes[i],listaSobrenomes[i],dta)
+    listaDefuncinarios.append(funcio)
 
-
-with open("datas.txt", 'w') as f:
-    f.write("{}".format(datas))

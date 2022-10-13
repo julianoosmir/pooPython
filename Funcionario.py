@@ -7,9 +7,9 @@ class Funcionario:
         self.sobrenome = sobrenome
         self.dataNascimento = dataNascimento
     def __repr__(self):
-        return  "%s%s%s%s%s%s%s%s" % ("codigo : ",self.codigo," | nome : ",self.nome,
-            "| sobrenome : ",self.sobrenome," | data de nascimento: ",self.dataNascimento)
+        return  "%s%s%s%s%s%s%s%s" % ("codigo : ",self.codigo," | nome : ",self.nome, 
+            " | sobrenome : ",self.sobrenome," | data de nascimento: ", self.dataNascimento)
  
-funca = Funcionario(1,'mario','carlos',date(2000,2,3))
 
-print(funca)
+
+

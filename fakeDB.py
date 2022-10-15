@@ -1,5 +1,6 @@
 from datetime import datetime
 from Funcionario import Funcionario
+import random
 
 with open("nomes.txt","r",encoding="utf-8") as nomes:
     listaNomes  = nomes.readlines()
@@ -14,10 +15,9 @@ with open("datas.txt","r",encoding="utf-8") as datas:
     listadatas = [x.replace("\n","") for x in listadatas]
 
 
-
 listaDefuncinarios : list = []
 for i in range(53):
     dta = datetime.strptime(listadatas[i],'%m/%d/%Y').date()
-    funcio = Funcionario(i,listaNomes[i],listaSobrenomes[i],dta)
-    listaDefuncinarios.append(funcio)
+    funcionario = Funcionario(i,listaNomes[i],listaSobrenomes[i],random.choice("mf"),dta)
+    listaDefuncinarios.append(funcionario)
 

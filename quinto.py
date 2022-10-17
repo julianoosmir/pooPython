@@ -1,7 +1,5 @@
 import fakeDB 
 
-#print(fakeDB.listaDefuncinarios)
-
 sobrenome = input(" digite 3 letras do  sobrenome : ")
 
 if len(sobrenome) > 3:

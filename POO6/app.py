@@ -22,16 +22,27 @@ def subtrairQuantidade(estoque: Estoque, sub: int):
     estoque.quantidade = estoque.quantidade - sub
     return estoque
 
+def validarEntradas(nome, quantidade):
+    validos = [x.iten for x in produtosEstoques if x.iten.nome == nome.strip() and quantidade < x.quantidade]
+    if len(validos) <= 0:
+      print("digite nome e quantidade corretas")
+      return False
+    else:
+     return True
+
+
 
 def fazerCompras():
     global produtosEstoques
     print("faça o pedido")
     nome = input(" o nome do produto ")
     quantidade = int(input("quantidade "))
-    produtoCompra: Produto = [x.iten for x in produtosEstoques if x.iten.nome == nome.strip()][0]
-    pedidos.append(ProdutoPedido(produtoCompra, quantidade))
-    produtosEstoques = [subtrairQuantidade(x, quantidade) for x in produtosEstoques]
-
+    if (validarEntradas(nome,quantidade)) :
+         produtoCompra: Produto = [x.iten for x in produtosEstoques if x.iten.nome == nome.strip()][0]
+         pedidos.append(ProdutoPedido(produtoCompra, quantidade))
+         produtosEstoques = [subtrairQuantidade(x, quantidade) for x in produtosEstoques]
+    else:
+        fazerCompras()
     continuar = int(input("digite 1 para fazer outra compra "))
     if continuar == 1:
         fazerCompras()
@@ -50,5 +61,5 @@ forma = input("total da compra : " + str(total(pedidos)) + " forma de pagamento 
 
 
 
-print("\n",pedidos, "total :", total(pedidos), "forma de pagamento",formaPagamento(forma))
+print("\n","Pedidos: ", pedidos, "total da compra  :", total(pedidos), "forma de pagamento",formaPagamento(forma))
 

@@ -1,9 +1,10 @@
 from enum import Enum
 
 class FormaDePagamento(Enum):
-	DEBITO = 1
-	CREDITO = 2 
-	DINHEIRO = 3
+	DEBITO = 'debito'
+	CREDITO = 'credito'
+	DINHEIRO = 'dinheiro'
 	def __str__(self):
-	   return str(self.value)
+	   return self.name
+
 

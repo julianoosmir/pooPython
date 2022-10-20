@@ -5,4 +5,5 @@ class Estoque:
         self.iten = iten
         self.quantidade = quantidade
     def __repr__(self):
-        return  "%s%s%s%s" % ("nome : ",self.iten.nome," | quantidade: ", self.quantidade)
+        return  "%s%s%s%s%s%s%s%s" % ("\n","nome : ",self.iten.nome, " | valor unitario : ",self.iten.preco,
+                                  " | quantidade: ", self.quantidade,"\n")

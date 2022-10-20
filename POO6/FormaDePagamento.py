@@ -7,5 +7,3 @@ class FormaDePagamento(Enum):
 	def __str__(self):
 	   return str(self.value)
 
-
-print(FormaDePagamento.CREDITO.name)

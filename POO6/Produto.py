@@ -3,4 +3,5 @@ class Produto:
         self.nome = nome
         self.preco = preco
     def __repr__(self):
-        return  "%s%s%s%s%s%s" % ("nome : ",self.nome," | preco : ",self.preco)
+        return  "%s%s%s%s" % ("nome : ",self.nome," | preco : ",self.preco)
+

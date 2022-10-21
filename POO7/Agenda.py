@@ -1,3 +1,6 @@
+from Contato import Contato
 class Agenda:
-    def __int__(self,contatos:list):
+    def __init__(self,contatos:list):
         self.contatos = contatos
+    def mostrarAgenda(self):
+        print(self.contatos)

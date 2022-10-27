@@ -1,7 +1,8 @@
 from Pessoa import Pessoa
 from Individuo import Individuo
 
-pai = Pessoa("jorge",32)
-individuo = Individuo(pai,"romeu",12);
+pai = Pessoa("romeu",32)
+mae = Pessoa("julieta",36)
+individuo = Individuo("jorge",12,pai,mae);
 
-print(type(individuo))
+print(individuo)

@@ -1,4 +1,4 @@
 class Pessoa:
-    def __int__(self, nome: str,sobrenome:str):
+    def __init__(self, nome: str,sobrenome:str):
         self.nome = nome
         self.sobrenome = sobrenome
